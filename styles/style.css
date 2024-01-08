@@ -1,20 +1,541 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
 
 .page {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  margin-inline: clamp(0rem, -8.1866rem + 34.9296vw, 23.25rem);
+  color: var(--color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  font-family: var(--font-press);
+  outline: 2px solid var(--color);
+  background-color: var(--bg-color);
+  margin-block-start: 102px;
+  margin-block-end: 102px;
+}
+
+.header__logo-group {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 20px;
+  justify-items: center;
+  margin-block-start: 136px;
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  text-transform: var(--text-transform);
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.title-first {
+  font-size: var(--font-title-first);
+}
+
+.title-second {
+  font-size: var(--font-title-second);
+}
+
+.header__theme-menu {
+  display: grid;
+  position: relative;
+  justify-content: center;
+  margin-block-start: 25px;
+  margin-block-end: 25px;
+}
+
+.theme-menu__list {
+  display: grid;
+  grid-template-rows: repeat(3, 14px);
+  gap: 14px;
+  margin-inline-start: 20px;
+}
+
+.theme-menu__item {
+  display: grid;
+  justify-items: start;
+  font-family: var(--font-press);
+  font-size: var(--font-size-button);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+.theme-menu__button {
+  text-transform: uppercase;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.theme-menu__button:disabled:before {
+  content: "▶";
+  position: absolute;
+  margin-inline-start: -20px;
+  animation: mooving 0.5s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes mooving {
+
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(28.5%);
+  }
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  opacity: 0.6;
+  background-color: var(--color);
+  transition: all ease 0.3s;
+}
+
+.theme-menu__button:focus-visible::after {
+  content: '';
+  display: block;
+  transform: scale(1.1);
+  height: 2px;
+  background-color: var(--color);
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  transition: all ease 0.3s;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:disabled:hover {
+  opacity: 0.6;
+  transition: 0.3s ease;
+
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card {
+  display: grid;
+  gap: 52px;
+  grid-template-rows: repeat(8, min-content);
+}
+
+.card__item {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  background-color: var(--bg-color);
+  outline: 2px solid var(--color);
+}
+
+.card__item-title {
+  padding-block: 8px;
+  padding-inline: 10px;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-text);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-fat);
+  line-height: var(--line-height);
+}
+
+.card__item-img {
+  display: grid;
+  position: relative;
+  z-index: 0;
+  outline: 2px solid var(--color);
+}
+
+.card__item-label {
+  display: grid;
+  grid-template-rows: 14px;
+  inset-inline-end: 25px;
+  inset-block-start: 23px;
+  position: absolute;
+  z-index: 1;
+  color: var(--color);
+  text-shadow:
+    -1px 0 var(--color-label),
+    0 1px var(--color-label),
+    1px 0 var(--color-label),
+    0 -1px var(--color-label);
+  font-family: var(--font-press);
+  font-size: var(--font-size-button);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-label)) {
+  .card__item-label {
+    -webkit-text-stroke: 1px var(--color-label);
+
+    text-shadow: none;
+  }
+}
+
+.img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img1 {
+  filter: contrast(80%);
+}
+
+.img2 {
+  filter: saturate(70%);
+}
+
+.img3 {
+  filter: invert(100%);
+}
+
+.img4 {
+  filter: saturate(150%);
+}
+
+.img5 {
+  filter: contrast(110%);
+}
+
+.img6 {
+  filter:hue-rotate(190deg);
+}
+
+.img7 {
+  filter: saturate(300%);
+  filter: blur(2px);
+}
+
+.img8 {
+  filter: saturate(10%);
+  filter: invert(100%);
+}
+
+.card__item-content {
+  display: grid;
+  margin-block-start: 25px;
+  margin-inline: 25px;
+  gap: 27px;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-text);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  line-height: 21px;
+}
+
+.card__button {
+  display: grid;
+  margin-block-start: 27px;
+  margin-block-end: 27px;
+  margin-inline: 27px;
+  justify-content: end;
+  gap: 14px;
+  grid-template-columns: repeat(2, min-content);
+}
+
+.card__icon-button {
+  display: grid;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  opacity: 0;
+}
+
+.core {
+  opacity: 0;
+  transition: ease-out 0.03s;
+}
+
+.card__icon-button:hover .core {
+  transition: ease-out 0.3s;
+  opacity: 1;
+}
+
+.card__icon-button:hover .main-body {
+  transition: ease 0.05s;
+  opacity: 1;
+}
+
+.card__icon-button:active .core {
+  transition: ease-out 0.3s;
+  opacity: 1;
+  fill: var(--color-sparks);
+}
+
+.card__icon-button:active .main-body {
+  transition: ease 0.05s;
+  opacity: 1;
+  fill: var(--color-sparks);
+}
+
+.like-icon.is-liked .core {
+  transition: ease-out 0.3s;
+  opacity: 1;
+  fill: var(--color-sparks);
+}
+
+.like-icon.is-liked .main-body {
+  transition: ease-out 0.3s;
+  opacity: 1;
+  fill: var(--color-sparks);
+}
+
+.like-icon.is-liked .contour {
+  transition: ease-out 0.06s;
+  opacity: 1;
+  fill: var(--color-sparks);
+}
+
+.like-icon.is-liked .heart {
+  transform: scale(1);
+  animation: loop 0.3s alternate-reverse ease-in;
+}
+
+@keyframes loop {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  
+  animation: spark 0.3s alternate-reverse ease-in;
+}
+
+@keyframes spark {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--color);
+  transition: 1s ease;
+}
+
+.card__like-button {
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  align-items: center;
+  grid-template-columns: 126px;
+  grid-template-rows: 34px;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  outline: 2px solid var(--color);
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 4px 4px 0 var(--color);
+  transition: 0.3s ease;
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color);
+  transition: all ease-in-out 0.5s;
+}
+
+.card__like-button:hover::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  transform: translate(-100%);
+  background-color: var(--color);
+  transition: all ease-in-out 0.5s;
+}
+
+.card__like-button:hover::before {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  transform: translate(0);
+  transition: all ease-in-out 0.5s;
+}
+
+.button__text {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-press);
+  font-size: var(--font-size-button);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight-press);
+  line-height: 90%;
+}
+
+.button__text:hover {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  color: var(--color-hover);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 54px;
+  margin-block-end: 100px;
+}
+
+.footer__button {
+  display: flex;
+  gap: 8px;
+  width: 336px;
+  height: 51px;
+  position: relative;
+  overflow: hidden;
+  justify-items: start;
+  align-items: center;
+  border: none;
+  outline: 2px solid var(--color);
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
+.footer__button::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color);
+  transition: all ease-in-out 0.5s;
+}
+
+.footer__button:focus-visible {
+  box-shadow: 4px 4px 0 var(--color);
+  transition: 0.3s ease;
+}
+
+.footer__button:hover::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  transform: translate(-100%);
+  background-color: var(--color);
+}
+
+.footer__button:hover::before {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  transform: translate(0);
+  transition: 0.5s ease-in-out;
+}
+
+.footer__button:hover {
+  color: var(--bg-color);
+  mix-blend-mode: difference;
+}
+
+.button__floppy {
+  position: relative;
+  z-index: 2;
+  margin-inline-start: 19px;
+  width: 21px;
+  height: 21px;
+}
+
+.dialog {
+  background-color: var(--bg-color);
+  font-family: var(--font-press);
+  inline-size: 357px;
+  block-size: 193px;
+  outline: 2px solid var(--color);
+  border: none;
+  padding: 0;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog__form {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 30px;
+  margin-block:30px;
+}
+
+.dialog__content {
+  display: flex;
+  gap: 20px;
+  color: var(--color);
+  font-size: 14px;
+}
+
+.dialog__floppy {
+  inline-size: 50%;
+}
+
+.dialog__button {
+  inline-size: 100%;
+  border: none;
+  outline: 2px solid var(--color);
+  text-transform: uppercase;
+  margin-block-start: 30px;
+  padding-block: 9px;
+  color: var(--color);
+  background-color: var(--bg-color);
 }

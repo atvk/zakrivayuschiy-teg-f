@@ -1,6 +1,72 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+
+:root.theme-dark {
+  --font-press: 'Press Start 2P';
+  --font-inter: 'Inter-Variable';
+  --bg-color: #000;
+  --color: #00CC14;
+  --bg-image:
+    repeating-linear-gradient(90deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
+    linear-gradient(to bottom, #007f0c 0, 01%, #004306 100%);
+  --font-press: 'Press Start 2P';
+  --font-inter: 'Inter-Variable';
+  --color-label: #000;
+  --color-hover: #00CC14;
+  --color-contour: #00CC14;
+  --color-sparks: red;
+}
+
+:root.theme-light {
+  --font-press: 'Press Start 2P';
+  --font-inter: 'Inter-Variable';
+  --bg-color: #fff;
+  --color: #000;
+  --bg-image:
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgba(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgba(0 0 0 / 0) 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0, 01%, #1a1a1a 100%);
+  --font-press: 'Press Start 2P';
+  --font-inter: 'Inter-Variable';
+  --color-label: #fff;
+  --color-hover: #fff;
+  --color-contour: #000;
+  --color-sparks: red;
+}
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --font-press: 'Press Start 2P';
+    --font-inter: 'Inter-Variable';
+    --bg-color: #000;
+    --color: #00CC14;
+    --bg-image:
+      repeating-linear-gradient(90deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
+      repeating-linear-gradient(180deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
+      linear-gradient(to bottom, #007f0c 0, 01%, #004306 100%);
+    --font-press: 'Press Start 2P';
+    --font-inter: 'Inter-Variable';
+    --color-label: #000;
+    --color-hover: #00CC14;
+    --color-contour: #00CC14;
+    --color-sparks: red;
+  }
+}
+
+@media (prefers-color-scheme:light) {
+  :root {
+    --font-press: 'Press Start 2P';
+    --font-inter: 'Inter-Variable';
+    --bg-color: #fff;
+    --color: #000;
+    --bg-image:
+      repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgba(0 0 0 / 0) 2px 4px),
+      repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgba(0 0 0 / 0) 2px 4px),
+      linear-gradient(to bottom, #e7e7e7 0, 01%, #1a1a1a 100%);
+    --font-press: 'Press Start 2P';
+    --font-inter: 'Inter-Variable';
+    --color-label: #fff;
+    --color-hover: #fff;
+    --color-contour: #000;
+    --color-sparks: red;
+  }
+}
