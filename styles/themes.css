@@ -9,12 +9,12 @@
   --font-decor: 'Press Start 2P';
   --font-text: 'Inter-Variable';
   --bg-image:
-  repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px), 
-  repeating-linear-gradient(0deg, var(--bg-color-mid)  0 2px, transparent 2px 4px), 
-  linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
-  --bg-color-light:#007f0c ;
-  --bg-color-mid:#000;
-  --bg-color-dark:#004306;
+    repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
+  --bg-color-light: #007f0c;
+  --bg-color-mid: #000;
+  --bg-color-dark: #004306;
   --bg-color: #000;
   --color: #00CC14;
   --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -26,10 +26,9 @@
   --font-weight: 400;
   --font-weight-fat: 700;
   --text-transform: uppercase;
-  --accent-color: #00CC14;
-
   --color-label: #000;
   --color-hover: #00CC14;
+  --color-accent: #00CC14;
   --color-contour: #00CC14;
   --color-sparks: red;
 }
@@ -39,12 +38,12 @@
     --font-decor: 'Press Start 2P';
     --font-text: 'Inter-Variable';
     --bg-image:
-  repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px), 
-  repeating-linear-gradient(0deg, var(--bg-color-mid)  0 2px, transparent 2px 4px), 
-  linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
-  --bg-color-light:#007f0c ;
-  --bg-color-mid:#000;
-  --bg-color-dark:#004306;
+      repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+      linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
+    --bg-color-light: #007f0c;
+    --bg-color-mid: #000;
+    --bg-color-dark: #004306;
     --bg-color: #000;
     --color: #00CC14;
     --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -56,23 +55,22 @@
     --font-weight: 400;
     --font-weight-fat: 700;
     --text-transform: uppercase;
-    --accent-color: #00CC14;
-
     --color-label: #000;
     --color-hover: #00CC14;
+    --color-accent: #00CC14;
     --color-contour: #00CC14;
     --color-sparks: red;
   }
 }
 
-.theme-light .page{
+.theme-light .page {
   --font-decor: 'Press Start 2P';
   --font-text: 'Inter-Variable';
   --bg-image:
-  repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px), 
-  repeating-linear-gradient(0deg, var(--bg-color-mid)  0 2px, transparent 2px 4px), 
-  linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
-  --bg-color-light:#E7E7E7; 
+    repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
+  --bg-color-light: #E7E7E7;
   --bg-color-mid: #d3d3d3;
   --bg-color-dark: #1A1A1A;
   --bg-color: #fff;
@@ -86,10 +84,9 @@
   --font-weight: 400;
   --font-weight-fat: 700;
   --text-transform: uppercase;
-  --accent-color: #fff;
-
   --color-label: #fff;
   --color-hover: #fff;
+  --color-accent: #000;
   --color-contour: #000;
   --color-sparks: red;
 }
@@ -99,10 +96,10 @@
     --font-decor: 'Press Start 2P';
     --font-text: 'Inter-Variable';
     --bg-image:
-    repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px), 
-    repeating-linear-gradient(0deg, var(--bg-color-mid)  0 2px, transparent 2px 4px), 
-    linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
-    --bg-color-light:#E7E7E7; 
+      repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
+      linear-gradient(to bottom, var(--bg-color-light)0.01%, var(--bg-color-dark) 100%);
+    --bg-color-light: #E7E7E7;
     --bg-color-mid: #d3d3d3;
     --bg-color-dark: #1A1A1A;
     --bg-color: #fff;
@@ -116,14 +113,10 @@
     --font-weight: 400;
     --font-weight-fat: 700;
     --text-transform: uppercase;
-    --accent-color: #fff; 
-
     --color-label: #fff;
     --color-hover: #fff;
+    --color-accent: #000;
     --color-contour: #000;
     --color-sparks: red;
   }
 }
-
-
-

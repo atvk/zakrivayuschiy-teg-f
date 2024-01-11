@@ -11,23 +11,26 @@
 }
 
 .like-icon.is-liked .heart {
-  transform: scale(1);
+  transform-origin: center;
   animation: loop 0.3s alternate ease-in;
 }
 
 @keyframes loop {
 
   from {
-    transform: scale(1);
+    transform: scale(1,1);
+   
   }
 
   to {
-    transform: scale(1.2);
+    transform: scale(1.5,1.5);
   }
 }
 
 .like-icon.is-liked .sparks {
-  animation: spark 0.3s alternate ease-in;
+  fill: var(--sparks-color);
+  transition: fill 0.06s linear;
+  animation: spark 0.3s alternate  0.3s ease-in;
  }
  
  @keyframes spark {

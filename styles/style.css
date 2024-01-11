@@ -1,6 +1,7 @@
 .page {
   display: grid;
   grid-template-rows: repeat(3, min-content);
+  margin: auto 0;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   margin-inline: clamp(0rem, -8.1866rem + 34.9296vw, 23.25rem);
@@ -16,10 +17,11 @@
   display: grid;
   gap: 20px;
   grid-template-rows: repeat(3, min-content);
-  outline: 2px solid var(--color);
+  border: 2px solid var(--color);
   background-color: var(--bg-color);
-  margin-block-start: 102px;
-  margin-block-end: 102px;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  margin-inline: -2px;
   font-family: var(--font-main);
   font-style: var(--font-style);
   font-weight: var(--font-weight);
@@ -119,7 +121,8 @@
 
 .card {
   display: grid;
-  gap: 52px;
+  margin-inline: -2px;
+  gap: 50px;
   grid-template-rows: repeat(8, min-content);
 }
 
@@ -127,12 +130,12 @@
   display: grid;
   grid-template-rows: repeat(3, min-content);
   background-color: var(--bg-color);
-  outline: 2px solid var(--color);
+  border: 2px solid var(--color);
 }
 
 .card__item-title {
-  padding-block: 8px;
-  padding-inline: 10px;
+  padding-block: 5px;
+  padding-inline-start: 10px;
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   font-style: var(--font-style);
@@ -144,14 +147,15 @@
   display: grid;
   position: relative;
   z-index: 0;
-  outline: 2px solid var(--color);
+  border-top: 2px solid var(--color);
+  border-bottom: 2px solid var(--color);
 }
 
 .card__item-label {
   display: grid;
   grid-template-rows: 14px;
   inset-inline-end: 25px;
-  inset-block-start: 23px;
+  inset-block-start: 25px;
   position: absolute;
   z-index: 1;
   color: var(--color);
@@ -218,7 +222,7 @@
 
 .card__item-content {
   display: grid;
-  margin-block-start: 25px;
+  margin-block-start: 27px;
   margin-inline: 25px;
   gap: 27px;
   font-family: var(--font-text);
@@ -230,21 +234,33 @@
 
 .card__button {
   display: grid;
-  align-items: center;
-  margin-block-start: 27px;
-  margin-block-end: 27px;
-  margin-inline: 27px;
-  justify-content: end;
-  gap: 14px;
+  gap: 7px;
   grid-template-columns: repeat(2, min-content);
+  align-items: center;
+  margin-block-start: 25px;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
+  justify-content: end;
 }
 
 .card__icon-button {
   display: grid;
+  align-items: center;
+  block-size: 38px;
+  inline-size: 39px;
   background-color: inherit;
   color: inherit;
   cursor: pointer;
   border: none;
+  transition: all 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
 }
 
 .sparks {
@@ -256,13 +272,13 @@
   transition: fill 0.3s linear 0.03s;
 }
 
-.heart .main-body {
-  fill: transparent;
+.heart:hover .core {
+  fill: var(--accent-color);
   transition: fill 0.3s linear;
 }
 
-.heart:hover .core {
-  fill: var(--accent-color);
+.heart .main-body {
+  fill: transparent;
   transition: fill 0.3s linear;
 }
 
@@ -283,95 +299,45 @@
 
 .like-icon.is-liked .core {
   fill: var(--sparks-color);
-  transition: fill 3s linear;
-}
-
-.card__icon-button:active .core {
-  transition: ease-out 0.3s;
-  opacity: 1;
-  fill: var(--color-sparks);
-}
-
-.card__icon-button:active .main-body {
-  transition: ease 0.05s;
-  opacity: 1;
-  fill: var(--color-sparks);
-}
-
-.like-icon.is-liked .core {
-  transition: ease-out 0.3s;
-  opacity: 1;
-  fill: var(--color-sparks);
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
-  transition: ease-out 0.3s;
-  opacity: 1;
-  fill: var(--color-sparks);
+  fill: var(--sparks-color);
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  transition: ease-out 0.06s;
-  opacity: 1;
-  fill: var(--color-sparks);
+  fill: var(--sparks-color);
+  transition: fill 0.3s linear 0.06s;
 }
 
-.card__icon-button:focus {
-  outline: none;
-}
-
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--color);
-  transition: 1s ease;
+.contour {
+  fill: var(--color-contour);
+  transition: fill 0.1s linear;
 }
 
 .card__like-button {
   display: grid;
   position: relative;
-  z-index: 0;
-  align-items: center;
   grid-template-columns: 126px;
   grid-template-rows: 34px;
+  align-items: center;
   background-color: inherit;
   color: inherit;
   cursor: pointer;
   border: none;
-  outline: 2px solid var(--color);
-  color: var(--bg-color);
-  transition: 0.3s ease;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--color);
-
-}
-
-.button {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(339px, min-content));
-  grid-template-rows: repeat(1, minmax(55px, min-content));
-  margin-block-start: 54px;
-  margin-block-end: 100px;
-  margin-inline: auto;
-}
-
-.button__content {
-  display: grid;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  grid-template-columns: repeat(2, max-content)
-}
-
-.button__hover {
-  height: 100%;
-  position: relative;
-  border: none;
-  outline: 2px solid var(--color);
+  border: 2px solid var(--color);
+  color: var(--color);
   background-color: var(--bg-color);
+  transition: transform 0.3s ease;
 }
 
-.button__hover::after {
+.hov {
+  position: relative;
+}
+
+.hov::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -384,15 +350,49 @@
   transform-origin: left center;
 }
 
-.button__hover:hover::after {
+.hov:hover::after {
   transform: scaleX(1);
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--color);
+}
+
+.button {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(1, minmax(339px, min-content));
+  grid-template-rows: repeat(1, minmax(55px, min-content));
+  margin-block-start: 54px;
+  margin-block-end: 100px;
+  margin-inline: auto;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  border: 2px solid var(--color);
+  color: var(--color);
+  background-color: var(--bg-color);
+  transition: 0.3s ease;
+}
+
+.button__content {
+  display: grid;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  grid-template-columns: repeat(2, max-content)
 }
 
 .button__text {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   mix-blend-mode: difference;
-  color: var(--accent-color);
+  color: var(--color-hover);
   font-family: var(--font-main);
   font-size: var(--font-size-button);
   line-height: 90%;
@@ -403,17 +403,20 @@
 }
 
 .button:focus {
-  border: none;
+  outline: none;
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0 var(--color);
-  transition: 0.3s ease;
+  box-shadow: 2px 2px 0 0 var(--color);
 }
 
 .dialog {
-  margin-inline: 542px;
-  margin-block: 384px;
+  display: grid;
+  position: fixed;
+  inset: 0;
+  grid-template-columns: minmax(357px, max-content);
+  margin: auto;
+  color: var(--color);
   background-color: var(--bg-color);
   font-family: var(--font-main);
   font-size: var(--font-size-button);
@@ -422,26 +425,42 @@
   padding: 0;
 }
 
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
 .dialog__form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
   margin-inline: 30px;
   margin-block: 30px;
 }
 
 .dialog__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content minmax(234px, min-content);
+  align-items: center;
   gap: 20px;
-  color: var(--color);
-  font-size: 14px;
 }
 
-.dialog__floppy {
-  inline-size: 50%;
+.content__floppy {
+  inline-size: 39px;
+}
+
+.content__text {
+  color: var(--color);
+  font-family: var(--font-main);
+  font-size: var(--font-size-button);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  line-height: 150%;
+  text-transform: var(--text-transform);
 }
 
 .dialog__button {
@@ -449,7 +468,6 @@ dialog::backdrop {
   border: none;
   outline: 2px solid var(--color);
   text-transform: uppercase;
-  margin-block-start: 30px;
   padding-block: 9px;
   color: var(--color);
   background-color: var(--bg-color);
@@ -458,10 +476,7 @@ dialog::backdrop {
 @media (width <=375px) {
 
   .header {
-    outline: none;
-    border: 2px solid var(--color);
-    margin-block-start: 100px;
-    margin-block-end: 100px;
+    margin-inline: 0px;
   }
 
   .header__logo {
@@ -469,29 +484,17 @@ dialog::backdrop {
   }
 
   .card {
+    margin-inline: 0px;
     gap: 48px;
   }
 
-  .card__item {
-    border: 2px solid var(--color);
-    outline: none;
-  }
-
   .card__item-title {
-    padding-block: 6px;
+    padding-inline-end: 12px;
   }
 
   .card__item-label {
     inset-inline-end: 11px;
-    inset-block-start: 23px;
-  }
-
-  .card__item-content {
-    margin-block-start: 28px;
-  }
-
-  .card__button {
-    gap: 8px; 
+    inset-block-start: 22px;
   }
 
   .button {
@@ -500,14 +503,23 @@ dialog::backdrop {
     margin-block-start: 54px;
     margin-block-end: 102px;
   }
-  
+
   .button__content {
     display: flex;
     flex-direction: column;
   }
-  
+
   .button__floppy {
     inline-size: 28px;
+  }
+
+  .dialog {
+    grid-template-columns: minmax(341px, min-content);
+  }
+
+  .dialog__content {
+    grid-template-columns: min-content minmax(198px, min-content);
+
   }
 
 }

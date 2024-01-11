@@ -13,20 +13,18 @@
   --color: #000;
   --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --font-title-logo: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  --font-size-text: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  --font-size-button: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  --font-size-text: 18px; /* clamp(1.125rem, 1.125rem + 0vw, 1.125rem);*/
+  --font-size-button: 14px; /*clamp(0.875rem, 0.875rem + 0vw, 0.875rem);*/
   --font-style: normal;
   --line-height: normal;
   --font-weight: 400;
   --font-weight-fat: 700;
   --text-transform: uppercase;
-  
   --color-label: #fff;
   --color-hover: #fff;
   
   --contour-color: #000;
   --sparks-color: red;
   --accent-color: #000;
-  
 }
 
