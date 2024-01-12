@@ -1,13 +1,7 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
 
 .theme-dark .page {
-  --font-decor: 'Press Start 2P';
-  --font-text: 'Inter-Variable';
+  --font-main: 'Press Start 2P', 'Arial', sans-serif;
+  --font-text: 'Inter-Variable', 'Arial', sans-serif;
   --bg-image:
     repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
     repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
@@ -24,19 +18,18 @@
   --font-style: normal;
   --line-height: normal;
   --font-weight: 400;
-  --font-weight-fat: 700;
   --text-transform: uppercase;
-  --color-label: #000;
-  --color-hover: #00CC14;
-  --color-accent: #00CC14;
-  --color-contour: #00CC14;
-  --color-sparks: red;
+  --label-color: #000;
+  --hover-color: #00CC14;
+  --contour-color: #00CC14;
+  --sparks-color: red;
+  --accent-color: #00CC14;
 }
 
 @media (prefers-color-scheme:dark) {
   :root {
-    --font-decor: 'Press Start 2P';
-    --font-text: 'Inter-Variable';
+    --font-main: 'Press Start 2P', 'Arial', sans-serif;
+    --font-text: 'Inter-Variable', 'Arial', sans-serif;
     --bg-image:
       repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
       repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
@@ -53,19 +46,18 @@
     --font-style: normal;
     --line-height: normal;
     --font-weight: 400;
-    --font-weight-fat: 700;
     --text-transform: uppercase;
-    --color-label: #000;
-    --color-hover: #00CC14;
-    --color-accent: #00CC14;
-    --color-contour: #00CC14;
-    --color-sparks: red;
+    --label-color: #000;
+    --hover-color: #00CC14;
+    --contour-color: #00CC14;
+    --sparks-color: red;
+    --accent-color: #00CC14;
   }
 }
 
 .theme-light .page {
-  --font-decor: 'Press Start 2P';
-  --font-text: 'Inter-Variable';
+  --font-main: 'Press Start 2P', 'Arial', sans-serif;
+  --font-text: 'Inter-Variable', 'Arial', sans-serif;
   --bg-image:
     repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
     repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
@@ -77,24 +69,24 @@
   --color: #000;
   --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --font-title-logo: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  --font-size-text: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  --font-size-button: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  --font-size-text: 18px;
+  --font-size-button: 14px;
   --font-style: normal;
   --line-height: normal;
   --font-weight: 400;
-  --font-weight-fat: 700;
   --text-transform: uppercase;
-  --color-label: #fff;
-  --color-hover: #fff;
-  --color-accent: #000;
-  --color-contour: #000;
-  --color-sparks: red;
+  --label-color: #fff;
+  --hover-color: #fff;
+  --contour-color: #000;
+  --sparks-color: red;
+  --accent-color: #000;
+
 }
 
 @media (prefers-color-scheme:light) {
   :root {
-    --font-decor: 'Press Start 2P';
-    --font-text: 'Inter-Variable';
+    --font-main: 'Press Start 2P', 'Arial', sans-serif;
+    --font-text: 'Inter-Variable', 'Arial', sans-serif;
     --bg-image:
       repeating-linear-gradient(90deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
       repeating-linear-gradient(0deg, var(--bg-color-mid) 0 2px, transparent 2px 4px),
@@ -106,17 +98,15 @@
     --color: #000;
     --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     --font-title-logo: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-    --font-size-text: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-    --font-size-button: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+    --font-size-text: 18px;
+    --font-size-button: 14px;
     --font-style: normal;
     --line-height: normal;
     --font-weight: 400;
-    --font-weight-fat: 700;
-    --text-transform: uppercase;
-    --color-label: #fff;
-    --color-hover: #fff;
-    --color-accent: #000;
-    --color-contour: #000;
-    --color-sparks: red;
+    --label-color: #fff;
+    --hover-color: #fff;
+    --contour-color: #000;
+    --sparks-color: red;
+    --accent-color: #000;
   }
 }

@@ -12,7 +12,7 @@
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: loop 0.3s alternate ease-in;
+  animation: loop 0.3s ease-in 0.1s alternate;
 }
 
 @keyframes loop {
@@ -29,8 +29,7 @@
 
 .like-icon.is-liked .sparks {
   fill: var(--sparks-color);
-  transition: fill 0.06s linear;
-  animation: spark 0.3s alternate  0.3s ease-in;
+  animation: spark 0.3s ease-in 0.3s alternate ;
  }
  
  @keyframes spark {

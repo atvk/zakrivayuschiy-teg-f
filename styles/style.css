@@ -21,7 +21,6 @@
   background-color: var(--bg-color);
   margin-block-start: 100px;
   margin-block-end: 100px;
-  margin-inline: -2px;
   font-family: var(--font-main);
   font-style: var(--font-style);
   font-weight: var(--font-weight);
@@ -69,8 +68,6 @@
   display: grid;
   justify-items: start;
   font-size: var(--font-size-button);
-
-
 }
 
 .theme-menu__button {
@@ -85,8 +82,8 @@
 .theme-menu__button:disabled:before {
   content: "▶";
   position: absolute;
-  top: 1;
-  left:1;
+  top: auto;
+  left: auto;
   margin-inline-start: -20px;
   animation: mooving 0.5s ease-in-out alternate infinite;
 }
@@ -118,12 +115,10 @@
 .theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
-  transition: 0.3s ease;
 }
 
 .card {
   display: grid;
-  margin-inline: -2px;
   gap: 50px;
   grid-template-rows: repeat(8, min-content);
 }
@@ -141,7 +136,7 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   font-style: var(--font-style);
-  font-weight: var(--font-weight-fat);
+  font-variation-settings: "wght" 700;
   line-height: var(--line-height);
 }
 
@@ -155,17 +150,16 @@
 
 .card__item-label {
   display: grid;
-  grid-template-rows: 14px;
   inset-inline-end: 25px;
   inset-block-start: 25px;
   position: absolute;
   z-index: 1;
   color: var(--color);
   text-shadow:
-    -1px 0 var(--color-label),
-    0 1px var(--color-label),
-    1px 0 var(--color-label),
-    0 -1px var(--color-label);
+    -1px 0 var(--label-color),
+    0 1px var(--label-color),
+    1px 0 var(--label-color),
+    0 -1px var(--label-color);
   font-family: var(--font-main);
   font-size: var(--font-size-button);
   font-style: var(--font-style);
@@ -175,10 +169,10 @@
   opacity: 0.5;
 }
 
-@supports ((text-stroke: 1px var(--color-label)) or (-webkit-text-stroke: 1px var(--color-label))) {
+@supports ((text-stroke: 1px var(--label-color)) or (-webkit-text-stroke: 1px var(--label-color))) {
   .card__item-label {
-    -webkit-text-stroke: 1px var(--color-label);
-    text-stroke: 1px var(--color-label);
+    -webkit-text-stroke: 1px var(--label-color);
+    text-stroke: 1px var(--label-color);
     text-shadow: none;
   }
 }
@@ -230,7 +224,7 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   font-style: var(--font-style);
-  font-weight: var(--font-weight);
+  font-variation-settings: "wght" 400;
   line-height: 21px;
 }
 
@@ -356,11 +350,11 @@
   transform: scaleX(1);
 }
 
-.card__like-button:focus {
+.hov:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible {
+.hov:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--color);
 }
 
@@ -394,7 +388,7 @@
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
-  color: var(--color-hover);
+  color: var(--hover-color);
   font-family: var(--font-main);
   font-size: var(--font-size-button);
   line-height: 90%;
@@ -402,14 +396,6 @@
 
 .button__floppy {
   inline-size: 21px;
-}
-
-.button:focus {
-  outline: none;
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--color);
 }
 
 .dialog {
@@ -467,13 +453,17 @@ dialog::backdrop {
 
 .dialog__button {
   inline-size: 100%;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
   border: none;
-  outline: 2px solid var(--color);
+  border: 2px solid var(--color);
   text-transform: uppercase;
   padding-block: 9px;
   color: var(--color);
   background-color: var(--bg-color);
 }
+
 
 @media (width <=375px) {
 
@@ -521,7 +511,6 @@ dialog::backdrop {
 
   .dialog__content {
     grid-template-columns: min-content minmax(198px, min-content);
-
   }
 
 }
