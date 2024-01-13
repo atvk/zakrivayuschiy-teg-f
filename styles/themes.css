@@ -18,6 +18,8 @@
   --font-style: normal;
   --line-height: normal;
   --font-weight: 400;
+  --card-title-weight: "wght" 785;
+  --card-text-weight: "wght" 465;
   --text-transform: uppercase;
   --label-color: #000;
   --hover-color: #00CC14;
@@ -46,6 +48,8 @@
     --font-style: normal;
     --line-height: normal;
     --font-weight: 400;
+    --card-title-weight: "wght" 785;
+    --card-text-weight: "wght" 465;
     --text-transform: uppercase;
     --label-color: #000;
     --hover-color: #00CC14;
@@ -74,6 +78,8 @@
   --font-style: normal;
   --line-height: normal;
   --font-weight: 400;
+  --card-title-weight: "wght" 700;
+  --card-text-weight: "wght" 400;
   --text-transform: uppercase;
   --label-color: #fff;
   --hover-color: #fff;
@@ -103,6 +109,8 @@
     --font-style: normal;
     --line-height: normal;
     --font-weight: 400;
+    --card-title-weight: "wght" 700;
+    --card-text-weight: "wght" 400;
     --label-color: #fff;
     --hover-color: #fff;
     --contour-color: #000;

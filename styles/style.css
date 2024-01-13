@@ -136,7 +136,7 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   font-style: var(--font-style);
-  font-variation-settings: "wght" 700;
+  font-variation-settings: var(--card-title-weight);
   line-height: var(--line-height);
 }
 
@@ -224,7 +224,7 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   font-style: var(--font-style);
-  font-variation-settings: "wght" 400;
+  font-variation-settings: var(--card-text-weight);
   line-height: 21px;
 }
 
@@ -326,11 +326,11 @@
   border: 2px solid var(--color);
   color: var(--color);
   background-color: var(--bg-color);
-  transition: transform 0.3s ease;
 }
 
 .hov {
   position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .hov::after {
